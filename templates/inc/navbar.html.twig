@@ -14,18 +14,21 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Dart Counter</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Saison
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Saison xyz</a>
-                    <a class="dropdown-item" href="#">Beendet</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Rangliste</a>
-                </div>
-            </li>
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Saison
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Saison xyz</a>
+                        <a class="dropdown-item" href="#">Beendet</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Rangliste</a>
+                    </div>
+                </li>
+            {% endif %}
         </ul>
         <ul class="navbar-nav">
             {% if is_granted('ROLE_SUPER_ADMIN') %}
