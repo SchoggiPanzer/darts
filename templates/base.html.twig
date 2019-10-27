@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}AADL{% endblock %}</title>
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+        {% block head %}
+            <meta charset="UTF-8">
+            <title>{% block title %}AADL{% endblock %}</title>
+            {% block stylesheets %}
+                {{ encore_entry_link_tags('app') }}
+            {% endblock %}
         {% endblock %}
     </head>
     <body>
